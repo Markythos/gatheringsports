@@ -1,12 +1,16 @@
 import { Tabs } from 'expo-router';
 import React from 'react';
 import { Platform } from 'react-native';
-
 import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+// Icone de base de REACT
+// import { IconSymbol } from '@/components/ui/IconSymbol';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
 import { useColorScheme } from '@/hooks/useColorScheme';
+//Importation des logo pour le barre en bas
+import FontAwesome from '@expo/vector-icons/FontAwesome';
+import MaterialIcons from '@expo/vector-icons/MaterialIcons';
+import Entypo from '@expo/vector-icons/Entypo';
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -30,21 +34,21 @@ export default function TabLayout() {
         name="index"
         options={{
           title: 'Principal',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarIcon: ({ color }) => <Entypo name="home" size={24} color="white" />,
         }}
       />
       <Tabs.Screen
         name="Terrain"
         options={{
           title: 'Terrain',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ color }) => <MaterialIcons name="stadium" size={24} color="white" />,
         }}
       />
       <Tabs.Screen
         name="Reservation"
         options={{
           title: 'Reservation',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ color }) => <FontAwesome name="calendar" size={24} color="white" />,
         }}
       />
     </Tabs>
