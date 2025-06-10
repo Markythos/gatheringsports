@@ -16,18 +16,11 @@
   },
   "dependencies": {
     "@expo/vector-icons": "^14.0.2",
-<<<<<<< HEAD
     "@react-navigation/bottom-tabs": "^7.0.0",
     "@react-navigation/native": "^7.0.14",
     "@react-navigation/stack": "^7.3.3",
-    "expo": "^53.0.0",
-=======
     "@react-native-picker/picker": "^2.11.0",
-    "@react-navigation/bottom-tabs": "^7.0.0",
-    "@react-navigation/native": "^7.0.14",
-    "@react-navigation/stack": "^7.3.3",
     "expo": "^53.0.11",
->>>>>>> 4f8c3b2 (avancé)
     "expo-audio": "~0.4.5",
     "expo-av": "~15.1.4",
     "expo-blur": "~14.1.4",
@@ -50,10 +43,7 @@
     "metro-resolver": "^0.81.1",
     "metro-source-map": "^0.81.1",
     "metro-transform-worker": "^0.81.1",
-<<<<<<< HEAD
-=======
     "picker": "^0.1.4",
->>>>>>> 4f8c3b2 (avancé)
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-native": "0.79.2",
