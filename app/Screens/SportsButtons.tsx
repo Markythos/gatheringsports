@@ -10,8 +10,22 @@ import {
 } from "react-native";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import cong from "../../configuration"; // Ton fichier Firebase config
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
-export default function LoginScreen({ navigation }) {
+type RootStackParamList = {
+  LoginScreen: undefined;
+  Terrain: undefined; // ou { ...params } si tu passes des paramètres
+};
+type LoginScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'LoginScreen'
+>;
+
+type Props = {  // 3.
+  navigation: LoginScreenNavigationProp;
+};
+
+export default function LoginScreen({navigation}: Props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
@@ -23,20 +37,20 @@ export default function LoginScreen({ navigation }) {
       Alert.alert("Erreur", "Merci de remplir tous les champs");
       return;
     }
-    setLoading(true);
-    signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        setLoading(false);
-        // Connexion réussie
-        const user = userCredential.user;
-        console.log("Connecté:", user.email);
-        // Naviguer vers l’écran principal (exemple)
-        navigation.replace("TerrainsScreen");
-      })
-      .catch((error) => {
-        setLoading(false);
-        Alert.alert("Erreur de connexion", error.message);
-      });
+    // setLoading(true);
+    // signInWithEmailAndPassword(auth, email, password)
+    //   .then((userCredential) => {
+    //     setLoading(false);
+    //     // Connexion réussie
+    //     const user = userCredential.user;
+    //     console.log("Connecté:", user.email);
+    //     // Naviguer vers l’écran principal (exemple)
+         navigation.replace("Terrain");
+    //   })
+    //   .catch((error) => {
+    //     setLoading(false);
+    //     Alert.alert("Erreur de connexion", error.message);
+    //   });
   };
 
   return (
