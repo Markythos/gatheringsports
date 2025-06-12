@@ -47,6 +47,7 @@ export default function Reservation() {
   const route = useRoute();
   const navigation = useNavigation();
   const params = route.params as { terrain?: Terrain };
+  
 
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [selectedHour, setSelectedHour] = useState<string | null>(null);
@@ -114,14 +115,14 @@ export default function Reservation() {
 
   const confirmReservation = async () => {
     setConfirmationVisible(false);
-    await playSound();
     setReservationInfo({
       date: selectedDate!,
       hour: selectedHour!,
       terrainName: terrain.name,
     });
-    await addEventToCalendar(terrain.name, selectedDate!, selectedHour!);
     setModalVisible(true);
+    await playSound();
+    await addEventToCalendar(terrain.name, selectedDate!, selectedHour!);
   };
 
   const handleCloseModal = () => {
