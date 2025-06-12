@@ -11,6 +11,8 @@ import {
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import cong from "../../configuration"; // Ton fichier Firebase config
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { Image } from "react-native";
+
 
 type RootStackParamList = {
   LoginScreen: undefined;
@@ -55,6 +57,10 @@ export default function LoginScreen({navigation}: Props) {
 
   return (
     <View style={styles.container}>
+      <Image
+        source={require("../../assets/images/logo.gif")}
+        style={styles.logo}
+      />
       <Text style={styles.title}>Connexion</Text>
       <TextInput
         placeholder="Email"
@@ -88,7 +94,7 @@ export default function LoginScreen({navigation}: Props) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#0c0c0c",
+    backgroundColor: "#2C3E50",
     justifyContent: "center",
     padding: 20,
   },
@@ -104,16 +110,23 @@ const styles = StyleSheet.create({
     padding: 12,
     marginBottom: 15,
     borderRadius: 8,
+    borderWidth: 3,
   },
   button: {
     backgroundColor: "#d63031",
     paddingVertical: 15,
     borderRadius: 8,
     alignItems: "center",
+    borderWidth: 3,
   },
   buttonText: {
     color: "white",
     fontWeight: "bold",
     fontSize: 16,
   },
+  logo: {
+    width: 300,
+    height: 200,
+    alignSelf: "center",
+  },  
 });
